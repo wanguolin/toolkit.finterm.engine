@@ -42,7 +42,6 @@ OPENAI_ENDPOINT=<your_deepseek_endpoint>
 Run the script:
 
 ```bash
-```bash
 python3.10 -m venv .venv
 source .venv/bin/activate
 pip install python-dotenv openai
