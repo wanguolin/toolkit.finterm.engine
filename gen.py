@@ -216,7 +216,7 @@ def create_index():
     if "others" in term_links:
         terms_content.extend(
             [
-                "## \\# (Others)",
+                "### \\# ",
                 *[
                     f"- [{term}]({path})"
                     for term, path in sorted(term_links.pop("others"))
@@ -228,7 +228,7 @@ def create_index():
     for category in sorted(term_links):
         terms_content.extend(
             [
-                f"## {category}",
+                f"### {category}",
                 *[f"- [{term}]({path})" for term, path in sorted(term_links[category])],
                 "\n---\n",
             ]
@@ -241,9 +241,12 @@ def create_index():
 
         template_content = template_path.read_text(encoding="utf-8")
 
-        # Replace the placeholder with progress info and terms content
+        # Generate content with section header
+        section_header = ["## Index"]  # Add a header for the terms section
+
         final_content = template_content.replace(
-            "## To be replaced", "\n".join(progress_info + terms_content)
+            "## To be replaced",
+            "\n".join(section_header + progress_info + terms_content),
         )
 
         # Write final README to gen directory
