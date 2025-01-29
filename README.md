@@ -48,3 +48,40 @@ pip install python-dotenv openai
 python gen.py --dict # generate all entries
 python gen.py --index # generate all entries
 ```
+
+## Features
+
+🚀 **High Performance**
+- Multi-threaded term generation
+- Smart retry mechanism with exponential backoff
+- Efficient file handling with thread-safe operations
+
+🎯 **Smart Organization**
+- Automatic A-Z category sorting
+- Special handling for numeric/symbol terms
+- Sanitized filename generation for cross-platform compatibility
+
+📊 **Progress Tracking**
+- Real-time generation progress monitoring
+- Detailed completion statistics
+- Timestamp-based update tracking
+
+🛠 **Developer Friendly**
+- CLI interface with --dict and --index options
+- Template-based content generation
+- Configurable via environment variables
+- Automatic index generation with Markdown linking
+
+🔄 **Robust Processing**
+- Comprehensive error handling
+- Duplicate entry detection
+- Content validation for generated terms
+- Auto-creation of category directories
+
+## Todo
+
+- Currently DeepSeek-V3 is experiencing high traffic limitations, making multi-threading ineffective
+- Looking for cost-effective hosting solutions to:
+  - Deploy self-hosted inference
+  - Support multiple API endpoints
+  - Enable full multi-threading capabilities with several API endpoints
