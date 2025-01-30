@@ -20,7 +20,7 @@ client = OpenAI(
 )
 
 # Constants
-NUM_THREADS = 1
+NUM_THREADS = 2
 TARGET_FILES = ["#"] + [chr(i) for i in range(ord("A"), ord("Z") + 1)]
 TEMPLATE = """You are a professional financial dictionary editor. Please explain the following financial term in both English and Chinese, following this format:
 
@@ -155,7 +155,7 @@ def load_terms() -> int:
     meta_dir = Path("meta")
 
     for filename in TARGET_FILES:
-        json_file = meta_dir / f"{filename}.json"
+        json_file = meta_dir / f"reviewed_{filename}.json"
         if not json_file.exists():
             continue
 
